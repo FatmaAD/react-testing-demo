@@ -2,6 +2,7 @@ import React from 'react';
 import { Card, CardActionArea, CardContent, CardMedia, LinearProgress, Paper, Typography } from '@mui/material';
 import { Box } from '@mui/system';
 import { Feed } from '../actions/landing/recipe';
+import {useNavigate} from 'react-router-dom';
 
 interface Props {
     isLoading: boolean;
@@ -9,6 +10,7 @@ interface Props {
 }
 
 export default function Recipe(props: Props) {
+    const navigate = useNavigate()
     const { isLoading, feeds, } = props;
     console.log('Recipe feeds', isLoading, feeds);
 
@@ -31,7 +33,7 @@ export default function Recipe(props: Props) {
                     data-testid='recipe'
                     key={feed.item.id}
                 >
-                    <Card sx={{ maxWidth: 345, height: '370px' }} onClick={()=>{window.location.assign(`/${feed.item.id}`)}}>
+                    <Card sx={{ maxWidth: 345, height: '370px' }} onClick={()=>{navigate(`/${feed.item.id}`)}}>
                         <CardActionArea>
                             <CardMedia
                                 component="img"
