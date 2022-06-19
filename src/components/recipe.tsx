@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, CardActionArea, CardContent, CardMedia, LinearProgress, Paper, Typography } from '@mui/material';
+import { Card, CardActionArea, CardContent, CardMedia, LinearProgress, Typography } from '@mui/material';
 import { Box } from '@mui/system';
 import { Feed } from '../actions/landing/recipe';
 import {useNavigate} from 'react-router-dom';

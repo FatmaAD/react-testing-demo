@@ -1,5 +1,5 @@
 import { CircularProgress, Box, Typography } from '@mui/material';
-import React, { Fragment, useEffect } from 'react';
+import React, { Fragment } from 'react';
 import useRecipeDetails from '../../actions/recipe';
 import Nav from '../../components/nav'
 
