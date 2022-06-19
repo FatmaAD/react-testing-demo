@@ -9,7 +9,7 @@ orbs:
 jobs:
   build:
     docker:
-      - circleci/node@0.0.7
+      - image: circleci/node@0.0.7
     steps:
       - checkout
       - run:
