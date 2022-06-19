@@ -1,9 +1,9 @@
-import { createMuiTheme, ThemeProvider } from '@mui/material';
+import { createTheme, ThemeProvider } from '@mui/material';
 import React from 'react';
 import './App.css';
 import Routes from './routs';
 
-const mainTheme = createMuiTheme({
+const mainTheme = createTheme({
   typography: {
     fontFamily: 'Proxima Nova,Helvetica,Arial,sans-serif;',
     h5:{

@@ -2,13 +2,13 @@ import { useCallback, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { http } from "..";
 
-interface Recipe {
+export interface Recipe {
     instructions: Array<{
         display_text: string;
         end_time: number;
         id: number;
         position: number;
-        start_time: 0
+        start_time: number;
     }>;
     cook_time_minutes: number;
     original_video_url?: string;
@@ -28,18 +28,19 @@ interface Recipe {
 
 const useRecipeDetails = () => {
     const { recipeName } = useParams<'recipeName'>();
-    const [isLoading, seIsLoading] = useState(false);
+    const [isLoading, seIsLoading] = useState(true);
     const [recipe, setRecipe] = useState<Recipe>();
 
     const getRecipe = useCallback(() => {
         if (!recipeName) {
             return
         }
-        seIsLoading(true);
+        // seIsLoading(true);
         const res = http('GET', 'https://tasty.p.rapidapi.com/recipes/get-more-info', { id: recipeName })
         res.then(data => {
-            console.log('<<<< data >>>>', data.data)
             setRecipe(data.data);
+        }).catch(()=>{
+            new Error('failed to load recipe')
         }).finally(() => {
             seIsLoading(false);
         })
@@ -50,6 +51,7 @@ const useRecipeDetails = () => {
     }, [getRecipe])
 
     return {
+        getRecipe,
         isLoading,
         recipe
     }
