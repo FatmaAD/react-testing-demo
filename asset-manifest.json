@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/react-testing-demo/static/css/main.073c9b0a.css",
-    "main.js": "/react-testing-demo/static/js/main.37c7c0b6.js",
+    "main.js": "/react-testing-demo/static/js/main.0adc5dd3.js",
     "static/js/606.06e40621.chunk.js": "/react-testing-demo/static/js/606.06e40621.chunk.js",
     "static/js/165.1ecc5d6b.chunk.js": "/react-testing-demo/static/js/165.1ecc5d6b.chunk.js",
     "static/js/787.b17df8a6.chunk.js": "/react-testing-demo/static/js/787.b17df8a6.chunk.js",
@@ -10,7 +10,7 @@
     "static/media/tasty-logo.png": "/react-testing-demo/static/media/tasty-logo.c16e0fa4523936a1ecb0.png",
     "index.html": "/react-testing-demo/index.html",
     "main.073c9b0a.css.map": "/react-testing-demo/static/css/main.073c9b0a.css.map",
-    "main.37c7c0b6.js.map": "/react-testing-demo/static/js/main.37c7c0b6.js.map",
+    "main.0adc5dd3.js.map": "/react-testing-demo/static/js/main.0adc5dd3.js.map",
     "606.06e40621.chunk.js.map": "/react-testing-demo/static/js/606.06e40621.chunk.js.map",
     "165.1ecc5d6b.chunk.js.map": "/react-testing-demo/static/js/165.1ecc5d6b.chunk.js.map",
     "787.b17df8a6.chunk.js.map": "/react-testing-demo/static/js/787.b17df8a6.chunk.js.map",
@@ -19,6 +19,6 @@
   },
   "entrypoints": [
     "static/css/main.073c9b0a.css",
-    "static/js/main.37c7c0b6.js"
+    "static/js/main.0adc5dd3.js"
   ]
 }
