@@ -13,8 +13,11 @@ jobs:
     steps:
       - checkout
       - run:
+          name: "installing libraries"
+          command: "yarn install"
+      - run:
           name: "building solution"
-          command: "yarn install && yarn run build"
+          command: "yarn run build"
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Autocomplete, Box, TextField } from '@mui/material';
+import { Autocomplete, Box, TextField, Typography } from '@mui/material';
 
 interface Props {
   recipesOptions: string[];
@@ -11,9 +11,10 @@ export default function SearchBar(props: Props) {
 
   const { recipesOptions, getSimilarFeed, autocompleteRecipe } = props;
 
-  return <Box display="flex" flexDirection="row" alignItems="center" justifyContent="space-between">
+  return <Box display="flex" flexDirection="column" alignItems="center" justifyContent="start">
+    <Typography style={{marginBottom: '5px'}} variant="h4" color="secondary">What are you looking for ?</Typography>
     <Autocomplete
-      fullWidth
+      style={{width: '50%'}}
       autoComplete={false}
       options={recipesOptions}
       onChange={(event: any, value: any) => {
