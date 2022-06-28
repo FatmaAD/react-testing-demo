@@ -1,8 +1,8 @@
 import React from 'react';
 import { Box } from '@mui/material';
-import SearchBar from '../components/searchbar';
-import Recipe from '../components/recipes-list/recipesList';
-import Nav from '../components/nav';
+import SearchBar from '../components/search-bar/searchbar';
+import Recipe from '../components/recipes-list';
+import Nav from '../components/nav/nav';
 import useSearch from '../actions/landing/search';
 import useRecipe from '../actions/landing/recipe';
 

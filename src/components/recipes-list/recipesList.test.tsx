@@ -1,6 +1,6 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
-import RecipesList from "./recipesList";
+import RecipesList from ".";
 import { Recipe } from "../../interfaces/Recipe";
 import { BrowserRouter as Router } from "react-router-dom";
 

@@ -1,9 +1,10 @@
-import { ArrowBack } from "@mui/icons-material";
-import { CircularProgress, Box, Typography, Button } from "@mui/material";
+import {Box, Typography } from "@mui/material";
 import React, { Fragment } from "react";
 import { useNavigate } from "react-router";
 import useRecipeDetails from "../../actions/recipe";
-import Nav from "../../components/nav";
+import BackBtn from "../../components/back-button";
+import CircularLoader from "../../components/circular-loader";
+import Nav from "../../components/nav/nav";
 
 export default function Recipe() {
   const { isLoading, recipe } = useRecipeDetails();
@@ -14,26 +15,12 @@ export default function Recipe() {
       <Nav />
 
       <Box mx={3}>
-        <Box mt={8} mb={3}>
-          <Button
-            color="secondary"
-            onClick={() => navigate(-1)}
-            startIcon={<ArrowBack color="secondary" />}
-          >
-            Back to search
-          </Button>
-        </Box>
+        <BackBtn clickHandler={() => navigate(-1)} />
 
         {isLoading && (
-          <Box
-            width="100%"
-            height="100vh"
-            display="flex"
-            justifyContent="center"
-          >
-            <CircularProgress role="progressbar" />
-          </Box>
+          <CircularLoader />
         )}
+
         {!isLoading && !recipe && (
           <Box
             width="100%"
@@ -46,6 +33,7 @@ export default function Recipe() {
             </Typography>
           </Box>
         )}
+
         {recipe && (
           <Box
             mx={1}
