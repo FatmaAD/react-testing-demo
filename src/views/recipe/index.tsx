@@ -56,7 +56,7 @@ export default function Recipe() {
             alignItems="start"
             justifyContent="start"
           >
-            <Box width="33.3%">
+           {recipe.nutrition && <Box width="33.3%">
               <Typography variant="h5">Nutrition Info</Typography>
               <Box display="flex" flexWrap="nowrap" flexDirection="row">
                 <Box width="49%" display="flex" flexWrap="wrap">
@@ -85,9 +85,9 @@ export default function Recipe() {
                   ))}
                 </Box>
               </Box>
-            </Box>
+            </Box>}
 
-            <Box width="33.3%">
+            {recipe.instructions && <Box width="33.3%">
               <Typography variant="h5">Preparation</Typography>
               <Box
                 mr={2}
@@ -120,7 +120,7 @@ export default function Recipe() {
                     ))}
                 </Box>
               </Box>
-            </Box>
+            </Box>}
 
             <Box width="33.3%" maxHeight="56vh">
               <Typography mb={2} variant="h5" color="secondary">

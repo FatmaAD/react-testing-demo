@@ -1,5 +1,5 @@
 import axios from "axios";
-import useRecipe, { Recipe } from "../../actions/recipe";
+import useRecipe from "../../actions/recipe";
 import { renderHook } from "@testing-library/react-hooks";
 import { mockedRecipe } from "../../mocks/recipe.mock";
 

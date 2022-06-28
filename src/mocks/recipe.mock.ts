@@ -1,6 +1,8 @@
-import { Recipe } from "../actions/recipe";
+import { Recipe } from "../interfaces/Recipe";
+
 
 export const mockedRecipe: Recipe = {
+  id: 'asd',
   cook_time_minutes: 70,
   instructions: [{
     start_time: 98000,

@@ -1,42 +1,30 @@
 import { useState } from "react";
 import { http } from "..";
-
-export interface Feed {
-    item: {
-        country?: string;
-        description?: string;
-        id: number;
-        name: string;
-        original_video_url?: string;
-        thumbnail_alt_text?: string;
-        thumbnail_url: string;
-        tips_and_ratings_enabled?: boolean;
-        topics?: any[];
-        user_ratings?: { count_positive: number, score: number, count_negative: number };
-        video_id?: number;
-        video_url?: string;
-    };
-    type: "featured" | "item" | "shoppable_carousel" | "carousel";
-}
+import { Recipe } from "../../interfaces/Recipe";
 
 export default function useRecipe() {
-    const [feeds, setFeeds] = useState<Feed[]>([]);
-    const [isLoading, seIsLoading] = useState(false);
+  const [recipes, setRecipes] = useState<Recipe[]>([]);
+  const [isLoading, seIsLoading] = useState(false);
 
-    const getSimilarFeed = (searchWord?: string) => {
-        seIsLoading(true);
-        const res = http('GET', 'https://tasty.p.rapidapi.com/feeds/list', { size: '5', vegetarian: 'false', from: '5', search_terms: searchWord,  })
-        res.then(data => {
-            const similarities = data.data.results?.filter((f: Feed) => f.type === 'item')
-            if (similarities.length > 0) {
-               setFeeds(similarities);
-            };
+  const getSimilarFeed = (searchWord?: string) => {
+    seIsLoading(true);
+    const res = http("GET", "https://tasty.p.rapidapi.com/recipes/list", {
+      size: "10",
+      from: "0",
+      q: searchWord,
+    });
+    res
+      .then((data) => {
+        const similarities = data.data.results;
+        console.log(similarities);
+        if (similarities.length > 0) {
+            setRecipes(similarities);
+        }
+      })
+      .finally(() => {
+        seIsLoading(false);
+      });
+  };
 
-        }).finally(() => {
-            seIsLoading(false);
-        })
-    }
-    
-
-    return { getSimilarFeed, feeds, isLoading }
+  return { getSimilarFeed, recipes, isLoading };
 }

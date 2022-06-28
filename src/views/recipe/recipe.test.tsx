@@ -1,5 +1,6 @@
 
 import { render, screen } from '@testing-library/react';
+import { BrowserRouter as Router } from 'react-router-dom';
 import useRecipeDetails from '../../actions/recipe';
 import { mockedRecipe } from '../../mocks/recipe.mock';
 import RecipeView from "./index";
@@ -23,7 +24,7 @@ describe('the recipe view loads the correct data', () => {
       isLoading: true,
       recipe: undefined,
     });
-    render(<RecipeView />);
+    render(<Router><RecipeView /></Router>);
     expect(await screen.findByRole("progressbar")).toBeInTheDocument();
   });
 
@@ -33,7 +34,7 @@ describe('the recipe view loads the correct data', () => {
       isLoading: false,
       recipe: undefined,
     });
-    render(<RecipeView />);
+    render(<Router><RecipeView /></Router>);
     expect(await screen.findByRole('heading', {
       name: /sorry, no data to display/i
     })).toBeInTheDocument();
@@ -45,7 +46,7 @@ describe('the recipe view loads the correct data', () => {
       isLoading: false,
       recipe: mockedRecipe,
     });
-    render(<RecipeView />);
+    render(<Router><RecipeView /></Router>);
     const video = await screen.findByTestId('recipe-video')
     expect(video).toBeInTheDocument();
   });
@@ -56,7 +57,7 @@ describe('the recipe view loads the correct data', () => {
       isLoading: false,
       recipe: mockedRecipe,
     });
-    render(<RecipeView />);
+    render(<Router><RecipeView /></Router>);
     const preparationStepOne = screen.getByRole('heading', { name: /\bMarinate the chicken/i })
     expect(preparationStepOne).toBeInTheDocument();
   });

@@ -1,30 +1,7 @@
 import { useCallback, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { http } from "..";
-
-export interface Recipe {
-    instructions: Array<{
-        display_text: string;
-        end_time: number;
-        id: number;
-        position: number;
-        start_time: number;
-    }>;
-    cook_time_minutes: number;
-    original_video_url?: string;
-    video_url?: string;
-    thumbnail_alt_text?: string;
-    thumbnail_url?: string;
-    name: string;
-    nutrition: {
-        calories: number;
-        carbohydrates: number;
-        fat: number;
-        fiber: number;
-        protein: number;
-        sugar: number;
-    }
-}
+import { Recipe } from "../../interfaces/Recipe";
 
 const useRecipeDetails = () => {
     const { recipeName } = useParams<'recipeName'>();
