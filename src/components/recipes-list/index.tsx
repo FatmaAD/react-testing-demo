@@ -39,12 +39,12 @@ export default function RecipesList(props: Props) {
           flexDirection="row"
           alignItems="center"
           flexWrap="wrap"
-          justifyContent="flex-start"
+          justifyContent="center"
         >
           {recipes.map((recipe) => (
             <Box m={3} display="flex" data-testid="recipe" key={recipe.id}>
               <Card
-                sx={{ maxWidth: 345, height: "370px" }}
+                sx={{ width: 345, height: "370px" }}
                 onClick={() => {
                   navigate(`/${recipe.id}`);
                 }}

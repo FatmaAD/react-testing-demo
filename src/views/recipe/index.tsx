@@ -4,7 +4,7 @@ import { useNavigate } from "react-router";
 import useRecipeDetails from "../../actions/recipe";
 import BackBtn from "../../components/back-button";
 import CircularLoader from "../../components/circular-loader";
-import Nav from "../../components/nav/nav";
+import Nav from "../../components/nav";
 
 export default function Recipe() {
   const { isLoading, recipe } = useRecipeDetails();
